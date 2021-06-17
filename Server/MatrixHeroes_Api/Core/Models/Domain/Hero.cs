@@ -43,7 +43,7 @@ namespace MatrixHeroes_Api.Core.Models.Domain
 
                 var rand = new Random();
                 TrainingsInCurrentSession++;
-                CurrentPower += CurrentPower * rand.Next(1, 11) / 100;
+                CurrentPower += CurrentPower * rand.Next(0, 11) / 100;
                 return true;
             }
             return false;
