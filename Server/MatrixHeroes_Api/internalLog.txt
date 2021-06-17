@@ -1,0 +1,82 @@
+2021-06-16 18:19:58.0564 Info Message Template Auto Format enabled
+2021-06-16 18:19:58.0661 Info Loading assembly: NLog.Web.AspNetCore
+2021-06-16 18:19:58.1063 Info Adding target FileTarget(Name=LocalLogFile)
+2021-06-16 18:19:58.1131 Info Adding target ColoredConsoleTarget(Name=console)
+2021-06-16 18:19:58.1377 Info Validating config: TargetNames=LocalLogFile, console, ConfigItems=32, FilePath=C:\Users\hp\Desktop\MatrixHeroes\Server\MatrixHeroes_Api\bin\Debug\net5.0\nlog.config.xml
+2021-06-16 18:20:13.1735 Info Shutdown() called. Logger closing...
+2021-06-16 18:20:13.1735 Info Closing old configuration.
+2021-06-16 18:20:13.1970 Info Logger has been closed down.
+2021-06-16 18:20:13.1970 Info AppDomain Shutting down. Logger closing...
+2021-06-16 18:20:13.2074 Info Logger has been shut down.
+2021-06-16 19:15:16.3933 Info Message Template Auto Format enabled
+2021-06-16 19:15:16.4252 Info Loading assembly: NLog.Web.AspNetCore
+2021-06-16 19:15:16.4753 Info Adding target FileTarget(Name=LocalLogFile)
+2021-06-16 19:15:16.4753 Info Adding target ColoredConsoleTarget(Name=console)
+2021-06-16 19:15:16.5205 Info Validating config: TargetNames=LocalLogFile, ConfigItems=31, FilePath=C:\Users\hp\Desktop\MatrixHeroes\Server\MatrixHeroes_Api\bin\Debug\net5.0\nlog.config.xml
+2021-06-16 19:15:16.5205 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: console
+2021-06-16 19:53:05.6789 Info Message Template Auto Format enabled
+2021-06-16 19:53:05.6789 Info Loading assembly: NLog.Web.AspNetCore
+2021-06-16 19:53:05.7260 Info Adding target FileTarget(Name=LocalLogFile)
+2021-06-16 19:53:05.7367 Info Adding target ColoredConsoleTarget(Name=console)
+2021-06-16 19:53:05.7612 Info Validating config: TargetNames=LocalLogFile, ConfigItems=31, FilePath=C:\Users\hp\Desktop\MatrixHeroes\Server\MatrixHeroes_Api\bin\Debug\net5.0\nlog.config.xml
+2021-06-16 19:53:05.7669 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: console
+2021-06-16 19:53:29.0271 Info Shutdown() called. Logger closing...
+2021-06-16 19:53:29.0271 Info Closing old configuration.
+2021-06-16 19:53:29.0359 Info Logger has been closed down.
+2021-06-16 19:53:29.0359 Info AppDomain Shutting down. Logger closing...
+2021-06-16 19:53:29.0359 Info Logger has been shut down.
+2021-06-16 19:53:42.8861 Info Message Template Auto Format enabled
+2021-06-16 19:53:42.8936 Info Loading assembly: NLog.Web.AspNetCore
+2021-06-16 19:53:42.9252 Info Adding target FileTarget(Name=LocalLogFile)
+2021-06-16 19:53:42.9252 Info Adding target ColoredConsoleTarget(Name=console)
+2021-06-16 19:53:42.9580 Info Validating config: TargetNames=LocalLogFile, ConfigItems=31, FilePath=C:\Users\hp\Desktop\MatrixHeroes\Server\MatrixHeroes_Api\bin\Debug\net5.0\nlog.config.xml
+2021-06-16 19:53:42.9580 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: console
+2021-06-16 19:54:03.0930 Info Shutdown() called. Logger closing...
+2021-06-16 19:54:03.0930 Info Closing old configuration.
+2021-06-16 19:54:03.0930 Info Logger has been closed down.
+2021-06-16 19:54:03.0930 Info AppDomain Shutting down. Logger closing...
+2021-06-16 19:54:03.0930 Info Logger has been shut down.
+2021-06-16 19:54:58.8761 Info Message Template Auto Format enabled
+2021-06-16 19:54:58.8919 Info Loading assembly: NLog.Web.AspNetCore
+2021-06-16 19:54:58.9437 Info Adding target FileTarget(Name=LocalLogFile)
+2021-06-16 19:54:58.9521 Info Adding target ColoredConsoleTarget(Name=console)
+2021-06-16 19:54:58.9767 Info Validating config: TargetNames=LocalLogFile, ConfigItems=31, FilePath=C:\Users\hp\Desktop\MatrixHeroes\Server\MatrixHeroes_Api\bin\Debug\net5.0\nlog.config.xml
+2021-06-16 19:54:58.9858 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: console
+2021-06-16 19:55:07.0703 Info Shutdown() called. Logger closing...
+2021-06-16 19:55:07.0703 Info Closing old configuration.
+2021-06-16 19:55:07.0785 Info Logger has been closed down.
+2021-06-16 19:55:07.0785 Info AppDomain Shutting down. Logger closing...
+2021-06-16 19:55:07.0785 Info Logger has been shut down.
+2021-06-16 19:55:21.1504 Info Message Template Auto Format enabled
+2021-06-16 19:55:21.1575 Info Loading assembly: NLog.Web.AspNetCore
+2021-06-16 19:55:21.1913 Info Adding target FileTarget(Name=LocalLogFile)
+2021-06-16 19:55:21.1913 Info Adding target ColoredConsoleTarget(Name=console)
+2021-06-16 19:55:21.2183 Info Validating config: TargetNames=LocalLogFile, ConfigItems=31, FilePath=C:\Users\hp\Desktop\MatrixHeroes\Server\MatrixHeroes_Api\bin\Debug\net5.0\nlog.config.xml
+2021-06-16 19:55:21.2183 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: console
+2021-06-16 19:55:21.4534 Info Shutdown() called. Logger closing...
+2021-06-16 19:55:21.4534 Info Closing old configuration.
+2021-06-16 19:55:21.4680 Info Logger has been closed down.
+2021-06-16 19:55:21.4680 Info AppDomain Shutting down. Logger closing...
+2021-06-16 19:55:21.4680 Info Logger has been shut down.
+2021-06-16 19:57:19.8536 Info Message Template Auto Format enabled
+2021-06-16 19:57:19.8608 Info Loading assembly: NLog.Web.AspNetCore
+2021-06-16 19:57:19.8958 Info Adding target FileTarget(Name=LocalLogFile)
+2021-06-16 19:57:19.8958 Info Adding target ColoredConsoleTarget(Name=console)
+2021-06-16 19:57:19.9220 Info Validating config: TargetNames=LocalLogFile, ConfigItems=31, FilePath=C:\Users\hp\Desktop\MatrixHeroes\Server\MatrixHeroes_Api\bin\Debug\net5.0\nlog.config.xml
+2021-06-16 19:57:19.9220 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: console
+2021-06-16 19:57:19.9711 Info Shutdown() called. Logger closing...
+2021-06-16 19:57:19.9711 Info Closing old configuration.
+2021-06-16 19:57:19.9860 Info Logger has been closed down.
+2021-06-16 19:57:19.9860 Info AppDomain Shutting down. Logger closing...
+2021-06-16 19:57:19.9860 Info Logger has been shut down.
+2021-06-16 19:58:11.3876 Info Message Template Auto Format enabled
+2021-06-16 19:58:11.3946 Info Loading assembly: NLog.Web.AspNetCore
+2021-06-16 19:58:11.4266 Info Adding target FileTarget(Name=LocalLogFile)
+2021-06-16 19:58:11.4266 Info Adding target ColoredConsoleTarget(Name=console)
+2021-06-16 19:58:11.4512 Info Validating config: TargetNames=LocalLogFile, ConfigItems=31, FilePath=C:\Users\hp\Desktop\MatrixHeroes\Server\MatrixHeroes_Api\bin\Debug\net5.0\nlog.config.xml
+2021-06-16 19:58:11.4576 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: console
+2021-06-16 19:58:26.8458 Info Shutdown() called. Logger closing...
+2021-06-16 19:58:26.8458 Info Closing old configuration.
+2021-06-16 19:58:26.8458 Info Logger has been closed down.
+2021-06-16 19:58:26.8458 Info AppDomain Shutting down. Logger closing...
+2021-06-16 19:58:26.8603 Info Logger has been shut down.
