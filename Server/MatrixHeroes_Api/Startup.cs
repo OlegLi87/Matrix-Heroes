@@ -3,6 +3,7 @@ using MatrixHeroes_Api.Core.Services;
 using MatrixHeroes_Api.Infastructure;
 using MatrixHeroes_Api.Infastructure.ExtensionMethods;
 using MatrixHeroes_Api.Infastructure.Filters;
+using MatrixHeroes_Api.Infastructure.Middlewares;
 using MatrixHeroes_Api.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -50,16 +51,13 @@ namespace MatrixHeroes_Api
         {
             var appSettings = opts.Value;
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            app.UseMiddleware<ExceptionHandler>();
 
             app.UseCors(appSettings.Cors.PolicyName);
-
             app.UseRouting();
 
             app.UseAuthentication();
+            app.UseMiddleware<RequestResponseLogger>();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

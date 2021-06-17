@@ -14,7 +14,7 @@ namespace MatrixHeroes_Api.Infastructure.Filters
         public void OnException(ExceptionContext context)
         {
             // logs exception that occurred in action,action filter,during model binding
-            _logger.LogError(context.Exception, "exception ocurred.");
+            _logger.LogError(context.Exception, "Exception inside MVC middleware.");
             context.Result = new ObjectResult(new AppResponse
             {
                 StatusCode = 500,
