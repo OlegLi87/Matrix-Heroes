@@ -1,0 +1,104 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="form-container col-11 col-sm-9 col-md-7 mt-5 p-4">
+      <h3 class="display-5 text-center mb-4">New Hero Form</h3>
+      <form [formGroup]="heroForm" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label for="heroName" class="form-label">Hero Name</label>
+          <input
+            id="heroName"
+            type="text"
+            class="form-control"
+            formControlName="name"
+          />
+          <small
+            *ngIf="
+              (heroForm.get('name').invalid && heroForm.get('name').touched) ||
+              (isFormSubmitted && heroForm.get('name').invalid)
+            "
+            >Hero name required.</small
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="startingPower" class="form-label">Starting Power</label>
+          <input
+            id="startingPower"
+            type="number"
+            class="form-control"
+            formControlName="startingPower"
+          />
+          <small
+            *ngIf="
+              (heroForm.get('startingPower').errors?.required &&
+                heroForm.get('startingPower').touched) ||
+              (isFormSubmitted && heroForm.get('startingPower').invalid)
+            "
+            >Starting power required.</small
+          >
+          <small
+            *ngIf="
+              heroForm.get('startingPower').errors?.min &&
+              heroForm.get('startingPower').touched
+            "
+            >Value must be greater than 1.</small
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="abilityId" class="form-label">Hero Ability</label>
+          <select
+            id="abilityId"
+            class="form-select"
+            formControlName="abilityId"
+          >
+            <option value="0" disabled>Select Ability</option>
+            <option [value]="ability.id" *ngFor="let ability of abilities">
+              {{ ability.name }}
+            </option>
+          </select>
+          <small
+            *ngIf="
+              (heroForm.get('abilityId').errors?.selectionError &&
+                heroForm.get('abilityId').touched) ||
+              (heroForm.get('abilityId').errors?.selectionError &&
+                isFormSubmitted)
+            "
+            >Ability required.</small
+          >
+        </div>
+
+        <div formArrayName="suitColors">
+          <h5 class="text-center mt-3">Suit Colors</h5>
+          <div
+            class="form-group mt-2"
+            *ngFor="let color of colorsFormArray.controls; let i = index"
+          >
+            <input type="color" class="form-control" [formControlName]="i" />
+          </div>
+        </div>
+        <div class="btn-addColor-container mt-3 d-flex justify-content-around">
+          <button type="button" class="btn btn-primary" (click)="addColor()">
+            Add Suit Color
+          </button>
+          <button type="button" class="btn btn-danger" (click)="removeColor()">
+            Remove Suit Color
+          </button>
+        </div>
+
+        <div class="btn-container text-center mt-4">
+          <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]="
+              (heroForm.invalid && isFormSubmitted) ||
+              (heroForm.touched && heroForm.invalid)
+            "
+          >
+            Save Hero
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

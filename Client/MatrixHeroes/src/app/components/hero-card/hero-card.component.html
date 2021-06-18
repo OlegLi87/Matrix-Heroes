@@ -1,0 +1,42 @@
+<h3 class="display-5 text-center mb-3">
+  {{ hero.name }} / {{ hero.abilityName }}
+</h3>
+<p>
+  ID: <strong>{{ hero.id }}</strong>
+</p>
+<p>
+  Training Start Date: <strong>{{ hero | trainStartDate }}</strong>
+</p>
+
+<div class="d-flex align-items-center mb-3">
+  Suit Colors:
+  <div
+    [style.backgroundColor]="color"
+    class="color-circle"
+    *ngFor="let color of hero.suitColors"
+  ></div>
+</div>
+
+<p>
+  Starting Power:
+  <strong>{{ hero.startingPower | number: "1.0-3" }}</strong>
+</p>
+<p>
+  Current Power:
+  <strong>{{ hero.currentPower | number: "1.0-3" }}</strong>
+</p>
+<p>
+  Trainings left in current session:
+  <strong>{{ 5 - hero.trainingsInCurrentSession }}</strong>
+</p>
+
+<div class="btn-container d-flex justify-content-around">
+  <button
+    [disabled]="hero.trainingsInCurrentSession >= 5"
+    class="btn btn-warning btn-small"
+    (click)="train()"
+  >
+    Train
+  </button>
+  <button class="btn btn-danger btn-small" (click)="remove()">Remove</button>
+</div>

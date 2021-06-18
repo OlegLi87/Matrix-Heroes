@@ -7,6 +7,7 @@ namespace MatrixHeroes_Api.Core.Models.Dtos
     public class HeroInputDto
     {
         [Required]
+        [MinLength(3)]
         public string Name { get; set; }
 
         [Required]

@@ -1,0 +1,16 @@
+<h2 *ngIf="!heroes.length; else heroesList" class="text-center">
+  You have no heroes.
+</h2>
+
+<div class="btn-container text-center mt-4">
+  <a routerLink="createHero" class="btn btn-primary">Create Hero</a>
+</div>
+
+<ng-template #heroesList>
+  <div class="hero-cards-container d-flex flex-wrap justify-content-center">
+    <hero-card
+      [hero]="hero"
+      *ngFor="let hero of heroes; trackBy: trackByFn"
+    ></hero-card>
+  </div>
+</ng-template>

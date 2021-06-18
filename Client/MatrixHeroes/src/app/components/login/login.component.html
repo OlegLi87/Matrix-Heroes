@@ -1,0 +1,108 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div
+      class="
+        form-container
+        col-11 col-md-8
+        d-inline-block
+        py-3
+        px-2 px-md-5
+        mt-5
+      "
+    >
+      <h3 class="text-center">{{ modeText }} Form</h3>
+
+      <form #form="ngForm" (ngSubmit)="submit()">
+        <div class="form-group">
+          <div class="form-label" for="userName">UserName</div>
+          <input
+            id="userName"
+            type="text"
+            class="form-control"
+            name="userName"
+            [(ngModel)]="credentials.userName"
+            required
+            #userName="ngModel"
+          />
+          <small class="text-danger" *ngIf="userName.errors && userName.touched"
+            >Username required.</small
+          >
+        </div>
+
+        <div class="form-group mt-2" *ngIf="showEmail">
+          <div class="form-label" for="email">Email</div>
+          <input
+            id="email"
+            type="email"
+            class="form-control"
+            name="email"
+            [(ngModel)]="credentials.email"
+            required
+            email
+            #email="ngModel"
+          />
+          <small
+            class="text-danger"
+            *ngIf="email.errors?.required && email.touched"
+            >Email required.</small
+          >
+          <small
+            class="text-danger"
+            *ngIf="email.errors?.email && email.touched"
+            >Must be a vaild email address.
+          </small>
+        </div>
+
+        <div class="form-group mt-2">
+          <div class="form-label" for="password">Password</div>
+          <input
+            id="password"
+            type="password"
+            class="form-control"
+            name="password"
+            [(ngModel)]="credentials.password"
+            required
+            pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+            #password="ngModel"
+          />
+          <small
+            class="text-danger"
+            *ngIf="password.errors?.required && password.touched"
+            >Password required.</small
+          >
+          <small
+            class="text-danger"
+            *ngIf="password.errors?.pattern && password.touched"
+            >Must have at leat one capital,one digit,one non-alphanumeric
+            char.</small
+          >
+        </div>
+
+        <div
+          class="
+            button-container
+            col-11 col-sm-8 col-md-6
+            d-flex
+            justify-content-around
+            mx-auto
+            mt-3
+          "
+        >
+          <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]="!form.valid"
+          >
+            {{ modeText }}
+          </button>
+          <button type="reset" class="btn btn-danger">Reset</button>
+        </div>
+        <small
+          class="switch-mode text-primary d-block text-center mt-4"
+          (click)="switchMode()"
+          >{{ switchText }}</small
+        >
+      </form>
+    </div>
+  </div>
+</div>

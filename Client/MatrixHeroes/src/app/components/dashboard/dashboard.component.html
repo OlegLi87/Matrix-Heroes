@@ -1,0 +1,11 @@
+<div class="container pt-4 position-relative">
+  <div class="row mt-4">
+    <h1 class="display-2 text-center">Hi {{ activeUser.name }}</h1>
+  </div>
+  <div class="row mt-5">
+    <heroes-list></heroes-list>
+  </div>
+  <button class="btn-logout btn btn-sm btn-danger" (click)="logout()">
+    Logout
+  </button>
+</div>

@@ -33,6 +33,7 @@ namespace MatrixHeroes_Api.Infastructure.ExtensionMethods
                 opts.Password.RequireUppercase = true;
                 opts.Password.RequireDigit = true;
                 opts.Password.RequireNonAlphanumeric = true;
+                opts.Password.RequireLowercase = false;
 
                 opts.User.RequireUniqueEmail = true;
             }).AddEntityFrameworkStores<MatrixHeroesDbContext>();
@@ -69,6 +70,8 @@ namespace MatrixHeroes_Api.Infastructure.ExtensionMethods
             {
                 opts.AddPolicy(appSettings.Cors.PolicyName, builder =>
                 {
+                    builder.AllowAnyMethod();
+                    builder.AllowAnyHeader();
                     foreach (var host in appSettings.Cors.AllowedHosts)
                         builder.WithOrigins(host);
                 });
