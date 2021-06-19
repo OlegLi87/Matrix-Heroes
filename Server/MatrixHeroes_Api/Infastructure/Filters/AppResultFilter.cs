@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using MatrixHeroes_Api.Core.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,8 +15,16 @@ namespace MatrixHeroes_Api.Infastructure.Filters
             if (context.Result is BadRequestObjectResult badReqRes)
             {
                 context.HttpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
-                context.Result = new ObjectResult(new { (badReqRes.Value as ValidationProblemDetails)?.Errors });
-                return;
+                IDictionary<string, string[]> errors = (badReqRes.Value as ValidationProblemDetails)?.Errors;
+                if (errors != null)
+                {
+                    var errorMessages = new List<string>();
+                    foreach (var kv in errors)
+                        foreach (var errMsg in kv.Value)
+                            errorMessages.Add(errMsg);
+                    context.Result = new ObjectResult(new { Errors = errorMessages });
+                    return;
+                }
             }
 
             if (context.Result is ObjectResult objResult)
@@ -42,8 +51,6 @@ namespace MatrixHeroes_Api.Infastructure.Filters
         }
 
         public void OnResultExecuted(ResultExecutedContext context)
-        {
-
-        }
+        { }
     }
 }

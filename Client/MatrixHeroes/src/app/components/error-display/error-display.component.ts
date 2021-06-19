@@ -1,7 +1,7 @@
 import { Subject } from 'rxjs';
 import { Component, Inject, OnInit } from '@angular/core';
 import { ERROR_STREAM } from 'src/app/di_providers/errorStream.provider';
-import { AppError } from 'src/app/models/appError.model';
+import { AppError, ErrorLevel } from 'src/app/models/appError.model';
 
 @Component({
   selector: 'error-display',
@@ -9,24 +9,26 @@ import { AppError } from 'src/app/models/appError.model';
   styleUrls: ['./error-display.component.sass'],
 })
 export class ErrorDisplayComponent implements OnInit {
-  errorMsg: string;
-  isCritical: boolean;
+  errorMessage: string;
+  isFatal: boolean;
 
   constructor(@Inject(ERROR_STREAM) private $errorStream: Subject<AppError>) {}
 
   ngOnInit(): void {
-    this.$errorStream.subscribe((error) => {
-      if (error) this.displayError(error);
-    });
+    this.$errorStream.subscribe(this.displayError.bind(this));
   }
 
   private displayError(error: AppError): void {
-    this.errorMsg = error.message;
-    this.isCritical = error.isCritical;
+    this.errorMessage = error.message;
+    this.isFatal = error.errorLevel === ErrorLevel.FATAL;
 
     setTimeout(() => {
-      this.errorMsg = null;
-      this.isCritical = false;
+      this.errorMessage = null;
+      this.isFatal = false;
     }, 3000);
+  }
+
+  get backgroundColor(): string {
+    return this.isFatal ? '#f70f0f' : '#f7b50f';
   }
 }

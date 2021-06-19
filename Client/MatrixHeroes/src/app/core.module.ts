@@ -1,5 +1,6 @@
+import { GlobalErrorHandlerService } from './services/globalErrorHandler.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { NgModule, LOCALE_ID, ErrorHandler } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -45,6 +46,10 @@ const imports = [
       provide: HTTP_INTERCEPTORS,
       useClass: HttpInterceptorService,
       multi: true,
+    },
+    {
+      provide: ErrorHandler,
+      useClass: GlobalErrorHandlerService,
     },
     appInitProvider,
     userStreamProvider,

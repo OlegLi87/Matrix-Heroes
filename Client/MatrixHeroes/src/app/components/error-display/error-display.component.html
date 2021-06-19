@@ -1,4 +1,8 @@
-<div class="msg-container p-4 rounded" *ngIf="errorMsg">
-  <h3 class="text-center">{{ errorMsg }}</h3>
-  <h4 *ngIf="isCritical" class="text-center">Please try again later.</h4>
+<div
+  class="msg-container p-4 rounded"
+  *ngIf="errorMessage"
+  [style.backgroundColor]="backgroundColor"
+>
+  <h3 class="text-center">{{ errorMessage }}</h3>
+  <h4 *ngIf="isFatal" class="text-center">Please try again later.</h4>
 </div>

@@ -1,0 +1,24 @@
+<!-- Must be placed inside bin folder -->
+<?xml version="1.0" encoding="utf-8" ?>
+<nlog
+  xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <targets>
+    <target xsi:type="ColoredConsole" name="console" />
+
+    <target xsi:type="File" name="CustomLogs" fileName="../../../logs/custom/${shortdate}.log"
+            layout="${longdate}|${uppercase:${level}}|${message}| ${exception:format=tostring}" />
+
+     <target xsi:type="File" name="SystemLogs" fileName="../../../logs/system/${shortdate}.log"
+            layout="${longdate}|${uppercase:${level}}|${message}| ${exception:format=tostring}" />
+   
+  </targets>
+
+  <rules>
+    <logger name="MatrixHeroes_Api.*" minlevel="Debug" writeTo="CustomLogs" />
+    <logger name="MatrixHeroes_Api.*" minlevel="Debug" writeTo="console" />
+    <logger name="Microsoft.Hosting.Lifetime" minlevel="Debug" writeTo="console" />
+    <logger name="Microsoft.*" minlevel="Debug" writeTo="SystemLogs" />
+  </rules>
+</nlog>

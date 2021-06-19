@@ -1,3 +1,4 @@
+using System;
 using System.Text;
 using MatrixHeroes_Api.Core.Models.Domain;
 using MatrixHeroes_Api.Persistence;
@@ -57,7 +58,9 @@ namespace MatrixHeroes_Api.Infastructure.ExtensionMethods
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSecret)),
                     ValidateIssuer = false,
-                    ValidateAudience = false
+                    ValidateAudience = false,
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero
                 };
             });
         }
